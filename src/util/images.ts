@@ -1,3 +1,4 @@
-export enum UrlImagesEnum {
-  whiteLogo = 'https://wtmi-api.herokuapp.com/images/logoWhiteWTMI.png',
-}
+export const UrlImages = {
+  whiteLogo: `${process.env.PUBLIC_URL}/images/logoBrancaWTMI.svg`,
+  backgroundHeader: `${process.env.PUBLIC_URL}/images/backgroundHeader.jpg`,
+};

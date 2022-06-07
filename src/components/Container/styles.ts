@@ -6,8 +6,6 @@ const styles = () =>
       width: '100%',
       maxWidth: 500,
       height: '100%',
-      padding: 20,
-      boxSizing: 'border-box',
       backgroundColor: 'red',
     },
   });

@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 import React from 'react';
-import { UrlImagesEnum } from '../../util/images';
+import { UrlImages } from '../../util/images';
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
@@ -12,7 +12,7 @@ const Header: React.FC = () => {
     <header className={classes.header}>
       <img
         className={classes.logo}
-        src={UrlImagesEnum.whiteLogo}
+        src={UrlImages.whiteLogo}
         alt="Logo branca do WTMI"
       />
     </header>
