@@ -1,4 +1,5 @@
 import { createStyles } from '@material-ui/core';
+import palette from '../../theme/palette';
 
 const styles = () =>
   createStyles({
@@ -6,7 +7,7 @@ const styles = () =>
       width: '100%',
       maxWidth: 500,
       height: '100%',
-      backgroundColor: 'red',
+      backgroundColor: palette.graySuperLight,
     },
   });
 

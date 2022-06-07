@@ -24,6 +24,11 @@ const styles = () =>
     logo: {
       height: '100%',
     },
+    error: {
+      color: 'red',
+      margin: 0,
+      fontSize: 13,
+    },
   });
 
 export default styles;

@@ -1,18 +1,18 @@
 import { createStyles } from '@material-ui/core';
 import palette from '../../theme/palette';
+import { UrlImages } from '../../util/images';
 
 const styles = () =>
   createStyles({
-    title: {
-      color: 'red',
-    },
-    container: {
-      padding: 20,
-      boxSizing: 'border-box',
+    paragraph: {
       color: palette.grayText,
+      fontSize: 16,
+      fontWeight: 300,
     },
-    button: {
-      marginTop: 15,
+    label: {
+      color: palette.grayText,
+      fontSize: 16,
+      fontWeight: 500,
     },
   });
 
