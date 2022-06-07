@@ -1,0 +1,9 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh; /* Fallback para não-suporte a Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+}
