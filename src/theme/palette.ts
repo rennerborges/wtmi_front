@@ -6,6 +6,7 @@ const palette = {
   purple: '#9942E8',
   grayText: '#605E5E',
   graySuperLight: '#F6F6F6',
+  boxShadow: '0px 6px 20px rgb(153 155 168 / 15%)',
 };
 
 export default palette;

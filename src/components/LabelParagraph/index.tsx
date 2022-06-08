@@ -9,13 +9,22 @@ interface Props {
   children: React.ReactNode;
   label: string;
   textAlign?: 'center' | 'left' | 'right';
+  style?: React.CSSProperties;
 }
 
-const LabelParagraph: React.FC<Props> = ({ children, textAlign, label }) => {
+const LabelParagraph: React.FC<Props> = ({
+  children,
+  textAlign,
+  label,
+  style,
+}) => {
   const classes = useStyles();
 
   return (
-    <p className={classes.paragraph} style={{ textAlign: textAlign || 'left' }}>
+    <p
+      className={classes.paragraph}
+      style={{ textAlign: textAlign || 'left', ...style }}
+    >
       <span className={classes.label}>{label}:</span>
       {children}
     </p>
