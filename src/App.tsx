@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import RegisterPresence from './pages/RegisterPresence';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<h1>Em breve </h1>} />
           <Route path="/scheduler/:id" element={<RegisterPresence />} />
-          <Route path="*" element={<h1>Not found</h1>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
