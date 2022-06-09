@@ -11,7 +11,8 @@ const styles = () =>
       boxSizing: 'border-box',
       color: palette.grayText,
       display: 'flex',
-      maxHeight: 'calc(100% - 120px)',
+      height: '100%',
+      overflow: 'hidden',
       flexDirection: 'column',
     },
     button: {
