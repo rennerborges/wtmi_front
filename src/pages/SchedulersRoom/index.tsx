@@ -58,7 +58,7 @@ const SchedulersRoom: React.FC = () => {
       {schedulers.length ? (
         <section className={classes.container}>
           <Title style={{ margin: 0, marginBottom: 10 }}>
-            Palestras sala 3
+            Palestras {nameRoom}
           </Title>
           <LabelParagraph label="Data" style={{ marginTop: 0 }}>
             {dateNow}
