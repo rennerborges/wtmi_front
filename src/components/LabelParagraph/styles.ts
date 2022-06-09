@@ -13,6 +13,7 @@ const styles = () =>
       color: palette.grayText,
       fontSize: 16,
       fontWeight: 500,
+      marginRight: 5,
     },
   });
 
