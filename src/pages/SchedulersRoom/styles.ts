@@ -10,9 +10,17 @@ const styles = () =>
       padding: 20,
       boxSizing: 'border-box',
       color: palette.grayText,
+      display: 'flex',
+      maxHeight: 'calc(100% - 120px)',
+      flexDirection: 'column',
     },
     button: {
       marginTop: 15,
+    },
+    containerCard: {
+      overflow: 'auto',
+      flex: '1',
+      maxHeight: '100%',
     },
   });
 

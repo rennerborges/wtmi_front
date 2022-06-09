@@ -64,7 +64,7 @@ const SchedulersRoom: React.FC = () => {
             {dateNow}
           </LabelParagraph>
 
-          <section>
+          <section className={classes.containerCard}>
             {schedulers?.map((scheduler) => (
               <Card data={scheduler} key={scheduler['_id']} />
             ))}

@@ -8,6 +8,8 @@ const styles = () =>
       maxWidth: 500,
       height: '100%',
       backgroundColor: palette.graySuperLight,
+      display: 'flex',
+      flexDirection: 'column',
     },
   });
 
