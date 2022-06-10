@@ -1,6 +1,5 @@
 import { makeStyles } from '@material-ui/core';
 import React from 'react';
-import { UrlImages } from '../../util/images';
 import styles from './styles';
 
 const useStyles = makeStyles(styles);

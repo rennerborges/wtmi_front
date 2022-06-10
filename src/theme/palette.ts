@@ -7,6 +7,7 @@ const palette = {
   grayText: '#605E5E',
   graySuperLight: '#F6F6F6',
   boxShadow: '0px 6px 20px rgb(153 155 168 / 15%)',
+  grayDisable: '#cdcdcd',
 };
 
 export default palette;

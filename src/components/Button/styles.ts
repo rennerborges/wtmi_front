@@ -13,6 +13,10 @@ const styles = () =>
       '&:hover': {
         backgroundColor: palette.purple,
       },
+      '&.MuiButton-root.Mui-disabled': {
+        color: palette.grayText,
+        backgroundColor: palette.grayDisable,
+      },
     },
   });
 

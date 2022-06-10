@@ -10,7 +10,9 @@ interface Props {
   name: string;
   error?: boolean;
   errorMessage?: string;
+  disabled?: boolean;
   onChange: (name: string, value: string) => void;
+  onBlur?: () => void;
 }
 
 const Header: React.FC<Props> = ({
@@ -19,7 +21,9 @@ const Header: React.FC<Props> = ({
   name,
   error,
   errorMessage,
+  disabled,
   onChange,
+  onBlur,
 }) => {
   const classes = useStyles();
 
@@ -42,6 +46,8 @@ const Header: React.FC<Props> = ({
         variant="outlined"
         value={value}
         error={error}
+        onBlur={onBlur}
+        disabled={disabled}
         onChange={onChangeInput}
       />
       {error && errorMessage && <p className={classes.error}>{errorMessage}</p>}
