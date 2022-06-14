@@ -17,7 +17,9 @@ const NotFound: React.FC<Props> = ({ title, urlImage }) => {
 
   return (
     <article className={classes.notFound}>
-      <Title style={{ margin: 0, marginBottom: 20 }}>Atenção</Title>
+      <Title style={{ margin: 0, marginTop: 10, marginBottom: 20 }}>
+        Atenção
+      </Title>
       <Paragraph style={{ margin: 0 }}>
         {title || 'Nenhuma informação foi encontrada.'}
       </Paragraph>
