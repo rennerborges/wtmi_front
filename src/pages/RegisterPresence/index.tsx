@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import styles from './styles';
 import Container from '../../components/Container';
 import Header from '../../components/Header';
-import Input from '../../components/Input';
 import Title from '../../components/Title';
 import Paragraph from '../../components/Paragraph';
 import LabelParagraph from '../../components/LabelParagraph';
@@ -17,6 +16,7 @@ import NotFound from '../../components/NotFound';
 import { isValidEmail } from '../../util/email';
 import { toast } from 'react-toastify';
 import Success from '../../components/Success';
+import Autocomplete from '../../components/Autocomplete';
 
 const useStyles = makeStyles(styles);
 
@@ -24,10 +24,6 @@ const RegisterPresence: React.FC = () => {
   const classes = useStyles();
 
   const { id: codeScheduler } = useParams();
-
-  const [alreadyPresence, setAlreadyPresence] = useState(
-    Boolean(localStorage.getItem(String(codeScheduler)))
-  );
 
   const [scheduler, setScheduler] = useState<ISchedulersRoom>();
   const [isLoading, setIsLoading] = useState(true);
@@ -37,7 +33,7 @@ const RegisterPresence: React.FC = () => {
 
   const [isSuccess, setIsSuccess] = useState(false);
 
-  async function getSchedulerRoom() {
+  async function getScheduler() {
     try {
       const { data } = await GetScheduler(codeScheduler);
       setIsLoading(false);
@@ -62,10 +58,7 @@ const RegisterPresence: React.FC = () => {
         progress: undefined,
       });
 
-      localStorage.setItem(String(codeScheduler), 'true');
-      setIsSuccess(true);
-      setAlreadyPresence(true);
-
+      setEmail('');
       setIsLoading(false);
     } catch (error: any | AxiosError) {
       setIsLoading(false);
@@ -75,8 +68,6 @@ const RegisterPresence: React.FC = () => {
       if (
         mensageError === 'Usuário já registrou sua presença nessa palestra!'
       ) {
-        localStorage.setItem(String(codeScheduler), 'true');
-        setAlreadyPresence(true);
       }
 
       toast.error(mensageError, {
@@ -92,7 +83,7 @@ const RegisterPresence: React.FC = () => {
   }
 
   useEffect(() => {
-    getSchedulerRoom();
+    getScheduler();
   }, []);
 
   if (isLoading) {
@@ -131,30 +122,33 @@ const RegisterPresence: React.FC = () => {
 
     return (
       <>
-        {alreadyPresence && (
-          <Title style={{ color: 'red' }}>
-            A presença nessa palestra já foi realizada nesse dispositivo
-          </Title>
-        )}
-
         <Title>{scheduler.title}</Title>
         <LabelParagraph label="Local"> {scheduler.location}</LabelParagraph>
         <Paragraph>
           Registre sua presença informando seu e-mail cadastrado na plataforma
           Even3
         </Paragraph>
-        <Input
+        <Autocomplete
           name="email"
           label="E-mail"
           value={email}
           onChange={(name, value) => setEmail(value)}
+          options={[
+            {
+              label: 'Renner Borges - rennerferreira23@gmail.com',
+              value: 'rennerferreira23@gmail.com',
+            },
+            {
+              label: 'Rafael Borges - rafaelferreira23@gmail.com',
+              value: 'rafaelferreira23@gmail.com',
+            },
+          ]}
           onBlur={isErrorEmail}
           error={errorEmail}
-          disabled={alreadyPresence}
           errorMessage="Informe um e-mail válido"
         />
         <div className={classes.button}>
-          <Button disabled={errorEmail || alreadyPresence} onClick={onSubmit}>
+          <Button disabled={errorEmail} onClick={onSubmit}>
             Registrar
           </Button>
         </div>
@@ -162,6 +156,7 @@ const RegisterPresence: React.FC = () => {
     );
   };
 
+  console.log(email);
   return (
     <Container>
       <Header />
