@@ -44,6 +44,8 @@ const RegisterPresence: React.FC = () => {
   }
 
   async function postPresenceScheduler() {
+    setEmail('');
+
     try {
       setIsLoading(true);
       await PostPresenceScheduler(codeScheduler, email);
@@ -58,7 +60,6 @@ const RegisterPresence: React.FC = () => {
         progress: undefined,
       });
 
-      setEmail('');
       setIsLoading(false);
     } catch (error: any | AxiosError) {
       setIsLoading(false);
