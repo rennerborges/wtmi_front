@@ -22,6 +22,10 @@ export interface ISchedulersRoom {
   initialDate: string;
   finalDate: string;
   location: string;
+  users: {
+    name: string;
+    email: string;
+  }[];
 }
 
 const SchedulersRoom: React.FC = () => {

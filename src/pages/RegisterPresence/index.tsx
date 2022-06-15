@@ -133,16 +133,12 @@ const RegisterPresence: React.FC = () => {
           label="E-mail"
           value={email}
           onChange={(name, value) => setEmail(value)}
-          options={[
-            {
-              label: 'Renner Borges - rennerferreira23@gmail.com',
-              value: 'rennerferreira23@gmail.com',
-            },
-            {
-              label: 'Rafael Borges - rafaelferreira23@gmail.com',
-              value: 'rafaelferreira23@gmail.com',
-            },
-          ]}
+          options={
+            scheduler?.users?.map((item) => ({
+              label: `${item.name} | ${item.email}`,
+              value: item.email,
+            })) || []
+          }
           onBlur={isErrorEmail}
           error={errorEmail}
           errorMessage="Informe um e-mail válido"
