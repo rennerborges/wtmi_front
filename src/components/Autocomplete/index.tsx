@@ -62,7 +62,9 @@ const Autocomplete: React.FC<Props> = ({
             variant="outlined"
             error={error}
             onBlur={onBlur}
-            value={value}
+            onChange={({ target: { value } }) =>
+              onChangeInput({ value } as AutocompleteOption)
+            }
             disabled={disabled}
           />
         )}
