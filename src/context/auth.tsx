@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
 export interface AuthContextInterface {
-  token?: string;
-  login?: (token: string) => void;
-  logout?: () => void;
+  token: string;
+  Login: (token: string) => void;
+  Logout: () => void;
 }
 
-export const AuthContext = React.createContext<AuthContextInterface>({});
+export const AuthContext = React.createContext<AuthContextInterface>(
+  {} as AuthContextInterface
+);
 
 interface Props {
   children?: React.ReactNode;
@@ -22,18 +24,18 @@ export const AuthProvider: React.FC<Props> = ({ children }) => {
     setToken(userStorage || '');
   }, []);
 
-  const login = (token: string) => {
+  const Login = (token: string) => {
     localStorage.setItem('token', token);
     setToken(token);
   };
 
-  const logout = () => {
+  const Logout = () => {
     localStorage.removeItem('token');
     setToken('');
   };
 
   return (
-    <AuthContext.Provider value={{ token, login, logout }}>
+    <AuthContext.Provider value={{ token, Login, Logout }}>
       {children}
     </AuthContext.Provider>
   );

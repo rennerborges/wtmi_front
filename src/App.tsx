@@ -6,8 +6,8 @@ import NotFound from './pages/NotFound';
 import SchedulersRoom from './pages/SchedulersRoom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { AuthProvider } from './context/auth';
 import PrivateRouter from './components/PrivateRouter';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
             <Route path="/scheduler/:id" element={<RegisterPresence />} />
           </Route>
           <Route path="/room/:id/schedulers" element={<SchedulersRoom />} />
-          <Route path="/login" element={<SchedulersRoom />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

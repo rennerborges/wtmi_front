@@ -35,7 +35,7 @@ const RegisterPresence: React.FC = () => {
 
   async function getScheduler() {
     try {
-      const { data } = await GetScheduler(codeScheduler);
+      const { data } = await GetScheduler(String(codeScheduler));
       setIsLoading(false);
       setScheduler(data.scheduler);
     } catch (error: any | AxiosError) {
@@ -48,7 +48,7 @@ const RegisterPresence: React.FC = () => {
 
     try {
       setIsLoading(true);
-      await PostPresenceScheduler(codeScheduler, email);
+      await PostPresenceScheduler(String(codeScheduler), email);
 
       toast.success('Prensença cadastrada! 😎', {
         position: 'top-right',

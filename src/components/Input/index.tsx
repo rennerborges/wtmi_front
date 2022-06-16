@@ -11,6 +11,7 @@ interface Props {
   error?: boolean;
   errorMessage?: string;
   disabled?: boolean;
+  type?: string;
   onChange: (name: string, value: string) => void;
   onBlur?: () => void;
 }
@@ -22,6 +23,7 @@ const Header: React.FC<Props> = ({
   error,
   errorMessage,
   disabled,
+  type,
   onChange,
   onBlur,
 }) => {
@@ -49,6 +51,8 @@ const Header: React.FC<Props> = ({
         onBlur={onBlur}
         disabled={disabled}
         onChange={onChangeInput}
+        type={type || 'text'}
+        name={name}
       />
       {error && errorMessage && <p className={classes.error}>{errorMessage}</p>}
     </>

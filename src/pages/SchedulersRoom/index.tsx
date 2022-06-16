@@ -38,7 +38,7 @@ const SchedulersRoom: React.FC = () => {
 
   async function getSchedulersRoom() {
     try {
-      const { data } = await GetSchedulersRoom(nameRoom);
+      const { data } = await GetSchedulersRoom(String(nameRoom));
       setIsLoading(false);
       setSchedulers(data.scheduler);
     } catch (error: any | AxiosError) {
