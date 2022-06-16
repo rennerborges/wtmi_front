@@ -32,6 +32,7 @@ export const AuthProvider: React.FC<Props> = ({ children }) => {
   const Logout = () => {
     localStorage.removeItem('token');
     setToken('');
+    window.location.pathname = '/';
   };
 
   return (

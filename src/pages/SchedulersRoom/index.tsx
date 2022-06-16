@@ -40,6 +40,7 @@ const SchedulersRoom: React.FC = () => {
     try {
       const { data } = await GetSchedulersRoom(String(nameRoom));
       setIsLoading(false);
+
       setSchedulers(data.scheduler);
     } catch (error: any | AxiosError) {
       setIsLoading(false);

@@ -17,11 +17,13 @@ import { isValidEmail } from '../../util/email';
 import { toast } from 'react-toastify';
 import Success from '../../components/Success';
 import Autocomplete from '../../components/Autocomplete';
+import { useAuth } from '../../context/auth';
 
 const useStyles = makeStyles(styles);
 
 const RegisterPresence: React.FC = () => {
   const classes = useStyles();
+  const { Logout } = useAuth();
 
   const { id: codeScheduler } = useParams();
 
@@ -40,6 +42,10 @@ const RegisterPresence: React.FC = () => {
       setScheduler(data.scheduler);
     } catch (error: any | AxiosError) {
       setIsLoading(false);
+      console.log(error?.response?.status);
+      if (error?.response?.status === 401) {
+        Logout();
+      }
     }
   }
 
