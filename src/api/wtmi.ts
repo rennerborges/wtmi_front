@@ -1,5 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import axios from 'axios';
+import { useAuth } from '../context/auth';
 
 const urlApi = 'https://wtmi-api.herokuapp.com';
 
@@ -10,10 +11,11 @@ export const GetSchedulersRoom = async (nameRoom: string) => {
   });
 };
 
-export const GetScheduler = async (codeScheduler: string) => {
+export const GetScheduler = async (codeScheduler: string, token: string) => {
   return axios({
     method: 'get',
     url: `${urlApi}/info/scheduler/${codeScheduler}`,
+    headers: { token },
   });
 };
 

@@ -23,7 +23,7 @@ const useStyles = makeStyles(styles);
 
 const RegisterPresence: React.FC = () => {
   const classes = useStyles();
-  const { Logout } = useAuth();
+  const { token, Logout } = useAuth();
 
   const { id: codeScheduler } = useParams();
 
@@ -37,7 +37,7 @@ const RegisterPresence: React.FC = () => {
 
   async function getScheduler() {
     try {
-      const { data } = await GetScheduler(String(codeScheduler));
+      const { data } = await GetScheduler(String(codeScheduler), token);
       setIsLoading(false);
       setScheduler(data.scheduler);
     } catch (error: any | AxiosError) {
