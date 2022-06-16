@@ -9,9 +9,10 @@ const useStyles = makeStyles(styles);
 
 interface Props {
   data: ISchedulersRoom;
+  isAuth: boolean;
 }
 
-const Card: React.FC<Props> = ({ data }) => {
+const Card: React.FC<Props> = ({ data, isAuth }) => {
   const classes = useStyles();
   const initialHour = MomentSpeed(data.initialDate).format('HH:mm[h]');
   const finalHour = MomentSpeed(data.finalDate).format('HH:mm[h]');
@@ -20,7 +21,7 @@ const Card: React.FC<Props> = ({ data }) => {
   const currentNow = IsBetween(dateNow, data.initialDate, data.finalDate);
   const passed = MomentSpeed(data.finalDate).isBefore(dateNow);
 
-  const isClick = currentNow || passed;
+  const isClick = (currentNow || passed) && isAuth;
 
   const getColor = () => {
     if (passed) {

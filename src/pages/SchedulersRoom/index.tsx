@@ -12,6 +12,7 @@ import { AxiosError } from 'axios';
 import { MomentSpeed } from '../../util/date';
 import NotFound from '../../components/NotFound';
 import Preloader from '../../components/Preloader';
+import { useAuth } from '../../context/auth';
 
 const useStyles = makeStyles(styles);
 
@@ -30,6 +31,8 @@ export interface ISchedulersRoom {
 
 const SchedulersRoom: React.FC = () => {
   const classes = useStyles();
+
+  const { token } = useAuth();
 
   const { id: nameRoom } = useParams();
 
@@ -71,7 +74,11 @@ const SchedulersRoom: React.FC = () => {
 
           <section className={classes.containerCard}>
             {schedulers?.map((scheduler) => (
-              <Card data={scheduler} key={scheduler['_id']} />
+              <Card
+                data={scheduler}
+                key={scheduler['_id']}
+                isAuth={Boolean(token)}
+              />
             ))}
           </section>
         </section>
