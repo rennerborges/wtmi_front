@@ -18,7 +18,11 @@ const Card: React.FC<Props> = ({ data, isAuth }) => {
   const finalHour = MomentSpeed(data.finalDate).format('HH:mm[h]');
   const dateNow = MomentSpeed();
 
-  const currentNow = IsBetween(dateNow, data.initialDate, data.finalDate);
+  const currentNow = IsBetween(
+    dateNow,
+    MomentSpeed(data.initialDate).subtract(15, 'minute').toISOString(),
+    data.finalDate
+  );
   const passed = MomentSpeed(data.finalDate).isBefore(dateNow);
 
   const isClick = (currentNow || passed) && isAuth;

@@ -21,7 +21,8 @@ export const GetScheduler = async (codeScheduler: string, token: string) => {
 
 export const PostPresenceScheduler = async (
   codeScheduler: string,
-  email: string
+  email: string,
+  token: string
 ) => {
   return axios({
     method: 'post',
@@ -29,6 +30,7 @@ export const PostPresenceScheduler = async (
     data: {
       email,
     },
+    headers: { token },
   });
 };
 

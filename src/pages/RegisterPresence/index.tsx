@@ -54,7 +54,7 @@ const RegisterPresence: React.FC = () => {
 
     try {
       setIsLoading(true);
-      await PostPresenceScheduler(String(codeScheduler), email);
+      await PostPresenceScheduler(String(codeScheduler), email, token);
 
       toast.success('Prensença cadastrada! 😎', {
         position: 'top-right',
