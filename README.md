@@ -1,46 +1,27 @@
-# Getting Started with Create React App
+<img align="right" src="https://wtmi-api.herokuapp.com/images/logoWTMI.png" width="250px">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Frontend do 4° Workshop de Tecnologias Móveis e para a Internet
 
-## Available Scripts
+Projeto para auxiliar no gerenciamento e criação de novas funcionalidades para o evento de tecnologia realizado nos dias 21 a 23 de junho de 2022 no Instituto Federal Goiano - Campus Morrinhos. 
 
-In the project directory, you can run:
 
-### `npm start`
+## Autores
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [@rennerborges](https://github.com/RennerBorges)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Documentação
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Documentação](https://wtmi-api.herokuapp.com/docs/)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Stack utilizada
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Front-end:** JavaScript, Typescript, Material-ui, Moment.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Funcionalidades
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Ver eventos em salas especificas
+- Registrar presença nos eventos
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
